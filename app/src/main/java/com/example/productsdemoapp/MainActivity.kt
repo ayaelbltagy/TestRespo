@@ -1,28 +1,22 @@
 package com.example.productsdemoapp
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.productsdemoapp.apis.APIService
-import com.example.productsdemoapp.database.ProductDB.Companion.getInstance
-import com.example.productsdemoapp.repository.ProductsRepository
-import kotlinx.coroutines.runBlocking
+import androidx.navigation.findNavController
+import com.example.productsdemoapp.helpers.PreferenceHelper
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-         val database = getInstance(application)
-
-         val repo = ProductsRepository(database)
-
-         runBlocking {
-             if (repo != null) {
-                 Toast.makeText(this@MainActivity,repo.refreshedProducts().toString(),Toast.LENGTH_LONG).show()
-             }
-
-
+        // check logged to handle navigation
+        var helper = PreferenceHelper(this)
+        val graph = findNavController(R.id.myNavHostFragment).graph
+        if (helper.getEmail().equals("") || helper.getEmail() == null) {
+            graph.startDestination = R.id.loginFragment
+        } else {
+            graph.startDestination = R.id.listFragment
         }
+        findNavController(R.id.myNavHostFragment).graph = graph
     }
 }
