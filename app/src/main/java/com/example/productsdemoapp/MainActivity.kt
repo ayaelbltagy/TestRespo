@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.myNavHostFragment)
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
         if (helper.getEmail().equals("") || helper.getEmail() == null) {
-            navGraph.startDestination = R.id.loginFragment
+            navGraph.startDestination = R.id.listFragment
         } else {
             navGraph.startDestination = R.id.listFragment;
         }
