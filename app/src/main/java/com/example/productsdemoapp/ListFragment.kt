@@ -29,12 +29,12 @@ class ListFragment : Fragment() {
         // call adapter and send list to view it
         // setup your adapter
         var adapter = ProductsAdapter(ClickListener{
-            Toast.makeText(requireContext(),it.id.toString(),Toast.LENGTH_LONG).show()
+            viewModel.saveThisProduct(it)
         })
         // show dialog till api get response
         binding.statusLoadingWheel.visibility = View.VISIBLE
         binding.asteroidRecycler.adapter = adapter
-        viewModel.list.observe(viewLifecycleOwner, Observer {
+        viewModel.showedList.observe(viewLifecycleOwner, Observer {
             it?.let {
                 // hide dialog as list is ready
                 binding.statusLoadingWheel.visibility = View.GONE

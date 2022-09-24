@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../Desktop/Asteroid_app_Aya_Elbltagy/app/src/main/java/com/udacity/asteroidradar/main/AsteroidViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../Desktop/Asteroid_app_Aya_Elbltagy/app/src/main/java/com/udacity/asteroidradar/main/MainAsteroidAdapter.kt">
           <value>
             <set />
@@ -29,6 +34,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/productsdemoapp/database/ProductDao.java">
           <value>
             <set />
           </value>

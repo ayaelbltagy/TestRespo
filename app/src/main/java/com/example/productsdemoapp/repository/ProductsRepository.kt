@@ -25,4 +25,5 @@ class ProductsRepository(private val database: ProductDB) {
 
     val listOfProducts: LiveData<List<ProductEntity>> = database.getProDao().getAllProducts()
 
+
 }

@@ -15,5 +15,4 @@ interface ProductDao {
     @Query("SELECT * FROM product_table")
     fun getAllProducts () : LiveData<List<ProductEntity>>
 
-    fun addOneProduct (product : ProductEntity)
 }
