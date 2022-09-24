@@ -11,12 +11,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         // check logged to handle navigation
         var helper = PreferenceHelper(this)
-        val graph = findNavController(R.id.myNavHostFragment).graph
+
+        val navController = findNavController(R.id.myNavHostFragment)
+        val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
         if (helper.getEmail().equals("") || helper.getEmail() == null) {
-            graph.startDestination = R.id.loginFragment
+            navGraph.startDestination = R.id.listFragment
         } else {
-            graph.startDestination = R.id.listFragment
+            navGraph.startDestination = R.id.listFragment;
         }
-        findNavController(R.id.myNavHostFragment).graph = graph
+        navController.setGraph(navGraph);
+
     }
 }

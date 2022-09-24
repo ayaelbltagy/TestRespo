@@ -1,7 +1,5 @@
 package com.example.productsdemoapp.apis
 
-import com.example.productsdemoapp.models.DataModel
-import retrofit2.Response
 import retrofit2.http.POST
 import retrofit2.http.Query
 
